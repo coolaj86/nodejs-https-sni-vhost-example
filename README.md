@@ -3,6 +3,25 @@ nodejs-https-sni-vhost-example
 
 An example of hosting multiple domains securely from a single server
 
-This repo isn't tested-working yet.
-It's an extension of the example at <https://github.com/coolaj86/node-ssl-root-cas>,
-which was tested-working.
+This a completely working example of vhosting https domains with demo keys included.
+
+```bash
+git clone git@github.com:coolaj86/nodejs-https-sni-vhost-example.git
+pushd nodejs-https-sni-vhost-example/
+
+npm install 
+node server
+```
+
+The app listens on 1 "fallback" domain and 2 vhost domains.
+
+* <https://localhost:4443>
+* <https://local.foobar3000.com:4443>
+* <https://local.helloworld3000.com:4443>
+
+Any requests to the non-secure domains will be redirected to the secure domain.
+
+* <http://localhost:4080>
+
+In order to stop your browser from issuing the ssl warning you need only to open the `ca/my-root-ca.crt.pem`
+in Keychain Access and add it.
