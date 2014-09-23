@@ -13,7 +13,7 @@ npm install
 node server
 ```
 
-The app listens on 1 "fallback" domain and 2 vhost domains.
+The app listens on 1 "fallback" domain and 2 vhost domains. All of these domains point to 127.0.0.1, so you can test them without any modification.
 
 * <https://localhost:4443>
 * <https://local.foobar3000.com:4443>
