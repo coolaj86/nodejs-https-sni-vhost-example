@@ -27,7 +27,7 @@ var https = require('https')
 
 require('ssl-root-cas/latest')
   .inject()
-  .addFile(__dirname + '/ssl/my-root-ca.crt.pem')
+  .addFile(__dirname + '/ca/my-root-ca.crt.pem')
   ;
 
 function getAppContext(domain) {
@@ -49,8 +49,8 @@ function getAppContext(domain) {
 
 domains.forEach(function (domain) {
   secureContexts[domain] = crypto.createCredentials({
-    key:  fs.readFileSync(__dirname + '/vhosts/' + domain + '/ssl/server.key')
-  , cert: fs.readFileSync(__dirname + '/vhosts/' + domain + '/ssl/server.crt')
+    key:  fs.readFileSync(__dirname + '/vhosts/' + domain + '/ssl/server.key.pem')
+  , cert: fs.readFileSync(__dirname + '/vhosts/' + domain + '/ssl/server.crt.pem')
   }).context;
 
   app.use(vhost('*.' + domain, getAppContext(domain)));
@@ -70,8 +70,8 @@ secureOpts = {
     return secureContexts[domain];
   }
   // fallback / default domain
-  , key:  fs.readFileSync(__dirname + '/localhost/ssl/server.key')
-  , cert: fs.readFileSync(__dirname + '/localhost/ssl/server.crt')
+  , key:  fs.readFileSync(__dirname + '/localhost/ssl/server.key.pem')
+  , cert: fs.readFileSync(__dirname + '/localhost/ssl/server.crt.pem')
 };
 
 secureServer = https.createServer(secureOpts, app).listen(securePort, function(){
