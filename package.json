@@ -1,0 +1,34 @@
+{
+  "name": "nodejs-https-sni-vhost-example",
+  "version": "0.1.0",
+  "description": "An example of hosting multiple domains securely from a single server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coolaj86/nodejs-https-sni-vhost-example.git"
+  },
+  "keywords": [
+    "sni",
+    "ssl",
+    "https",
+    "ca",
+    "vhost",
+    "vhosts"
+  ],
+  "author": "AJ ONeal <coolaj86@gmail.com> (http://coolaj86.com/)",
+  "license": "Apache2",
+  "bugs": {
+    "url": "https://github.com/coolaj86/nodejs-https-sni-vhost-example/issues"
+  },
+  "homepage": "https://github.com/coolaj86/nodejs-https-sni-vhost-example",
+  "dependencies": {
+    "connect": "^3.2.0",
+    "finalhandler": "^0.3.0",
+    "ssl-root-cas": "^1.1.7",
+    "vhost": "^3.0.0"
+  }
+}
