@@ -10,7 +10,7 @@ git clone git@github.com:coolaj86/nodejs-https-sni-vhost-example.git
 pushd nodejs-https-sni-vhost-example/
 
 npm install 
-node server
+node ./vhost-sni-server.js
 ```
 
 The app listens on 1 "fallback" domain and 2 vhost domains. All of these domains point to 127.0.0.1, so you can test them without any modification.

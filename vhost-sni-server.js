@@ -103,7 +103,7 @@ secureServer.listen(securePort, function () {
 insecureServer = http.createServer();
 insecureServer.on('request', function (req, res) {
   var newLocation = 'https://'
-    + req.headers.host.replace(/:\d+/, ':' + port) + req.url
+    + req.headers.host.replace(/:\d+/, ':' + securePort) + req.url
     ;
 
   var metaRedirect = ''
