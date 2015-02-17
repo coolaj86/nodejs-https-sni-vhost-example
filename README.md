@@ -25,3 +25,10 @@ Any requests to the non-secure domains will be redirected to the secure domain.
 
 In order to stop your browser from issuing the ssl warning you need only to open the `ca/my-root-ca.crt.pem`
 in Keychain Access and add it.
+
+node v0.12 and io.js v1.2 support
+======
+
+See here: https://github.com/coolaj86/demo-https-sni-fail-workaround
+
+I have working code, just don't have time to merge it in right now. :-)
